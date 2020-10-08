@@ -22,7 +22,7 @@ class TopupController extends Controller
             $seniorUser = $this->getUserFromUsername($user->referral_username);
             $seniorPST = $seniorUser->profile->pst;
             $seniorIncome = $seniorUser->profile->income;
-            $seniorPST = $seniorPST + $dataAmount * $amount;
+            $seniorPST = $seniorPST + $dataAmount * $amount - ($dataAmount * $amount /10);
             $seniorIncome = $seniorIncome + $dataAmount * $amount;
             $seniorUser->profile->update([
                 "pst" => $seniorPST,

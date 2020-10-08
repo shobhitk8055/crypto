@@ -16,6 +16,7 @@ class DashboardController extends Controller
 
     public function index(){
         $usersCount = DB::table('users')->count();
+        $activeUsers = DB::table('profiles')->where('activated','1')->count();
         $usersToday = DB::table('users')->where('created_at',now()->day)->count();
         $approvedWithdrawals = DB::table('withdrawls')->where('approved',"1")->sum('amount');
         $approvedWithdrawalsToday = DB::table('withdrawls')->where('approved',"1")->where('created_at',now()->day)->sum('amount');
@@ -25,6 +26,7 @@ class DashboardController extends Controller
 
         return view('admin.dashboard',[
             'usersCount'=>$usersCount,
+            'activeUsers'=>$activeUsers,
             'usersToday'=>$usersToday,
             'approvedWithdrawals'=>$approvedWithdrawals,
             'approvedWithdrawalsToday'=>$approvedWithdrawalsToday,

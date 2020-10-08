@@ -190,7 +190,7 @@
                 <ul class="navbar-nav align-items-center  ml-auto ml-md-0 ">
                     <li class="text-white mr-3">
                         PST : {{ auth()->user()->profile->pst }}
-                    </li>--}}
+                    </li>
                     <li class="text-white">
                         Live Rate - {{ \App\Essential::find(1)->rate }} ₹/PST
                     </li>

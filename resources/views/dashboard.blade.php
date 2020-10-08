@@ -47,10 +47,6 @@
                                         <span class="heading">{{$user->profile->pst?? "0"}}</span>
                                         <span class="description">PST</span>
                                     </div>
-                                    <div>
-                                        <span class="heading">{{$user->profile->usdt?? "0"}}</span>
-                                        <span class="description">USDT</span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
